@@ -4,6 +4,7 @@ import Words from "@/views/Words";
 import Show from "@/views/Show";
 import New from "@/views/New";
 import Edit from "@/views/Edit";
+import Test from "@/views/Test";
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       name: "edit",
       props: true,
       component: Edit
+    },
+    {
+      path: "/test",
+      name: "teste",
+      component: Test
     }
   ]
 });

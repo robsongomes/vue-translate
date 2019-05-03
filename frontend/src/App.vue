@@ -18,6 +18,7 @@
 
     <div class="ui text container">
       <div class="ui one column grid">
+        <flash-message class="myFlash"></flash-message>
         <div class="column">
           <router-view />
         </div>
