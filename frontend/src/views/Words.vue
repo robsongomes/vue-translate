@@ -1,26 +1,31 @@
 <template>
     <div>
-        <table>
-            <thead>                
-                <th>
-                    <td>English</td>
-                </th>
-                <th>
-                    <td>German</td>
-                </th>
-                <th>
-                    <td colspan="2">Actions</td>
-                </th>
+        <table class="ui celled compact table">
+            <thead>
+                <tr>
+                    <th>English</th>
+                    <th>German</th>
+                    <th colspan="3">Actions</th>                
+                </tr>                
             </thead>
             <tbody>
                 <tr :key="word._id" v-for="word in words">
                     <td>{{ word.english }}</td>
                     <td>{{ word.german }}</td>
-                    <td>
-                        <router-link :to="{name: 'show', params: {id: word._id}}">Show</router-link>
+                    <td width="75" class="center aligned">
+                        <router-link :to="{name: 'show', params: {id: word._id}}">
+                            <i class="eye icon"></i>
+                        </router-link>
                     </td>
-                    <td @click.prevent="remove(word._id)">
-                        <a :href="`/words/${word._id}`">Destroy</a>
+                    <td width="75" class="center aligned">
+                        <router-link :to="{name: 'edit', params: {id: word._id}}">
+                            <i class="pencil alternate icon"></i>
+                        </router-link>
+                    </td>
+                    <td width="75" class="center aligned" @click.prevent="remove(word._id)">
+                        <a :href="`/words/${word._id}`">
+                            <i class="trash alternate icon"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>
